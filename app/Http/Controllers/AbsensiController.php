@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Izin;
 
 class AbsensiController extends Controller
 {
@@ -13,7 +14,8 @@ class AbsensiController extends Controller
 
     public function dashboard() {
         $role = 'hrd';       // Role HRD untuk dashboard
-        return view('pages.dashboard', compact('role'));
+        $izins = Izin::all();
+        return view('pages.dashboard', compact('role', 'izins'));
     }
 
     public function cuti() {

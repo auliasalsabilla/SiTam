@@ -29,17 +29,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="border border-gray-300 p-2">Siti Aminah</td>
-                <td class="border border-gray-300 p-2">Cuti Tahunan</td>
-                <td class="border border-gray-300 p-2">2025-06-09</td>
-            </tr>
-            <tr>
-                <td class="border border-gray-300 p-2">Joko Susilo</td>
-                <td class="border border-gray-300 p-2">Izin Sakit</td>
-                <td class="border border-gray-300 p-2">2025-06-09</td>
-            </tr>
-            <!-- Tambah data lain -->
+            @foreach ($izins as $izin)
+                <tr>
+                    <td class="border border-gray-300 p-2">{{ $izin->nama }}</td>
+                    <td class="border border-gray-300 p-2">{{ ucfirst(str_replace('_', ' ', $izin->jenis_izin)) }}</td>
+                    <td class="border border-gray-300 p-2">{{ $izin->tanggal_mulai }} s/d {{ $izin->tanggal_selesai }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
