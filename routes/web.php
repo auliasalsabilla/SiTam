@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [AbsensiController::class, 'scan'])->name('scan');
+Route::get('/scan', [AbsensiController::class, 'scan'])->name('scan');
 Route::get('/dashboard', [AbsensiController::class, 'dashboard'])->name('dashboard');
 Route::post('/izin/store', [IzinController::class, 'store'])->name('izin.store');
 Route::post('/lihat-pengajuan', [IzinController::class, 'index'])->name('izin.lihat');
