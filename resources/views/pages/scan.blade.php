@@ -57,15 +57,16 @@
     status.textContent = 'Absensi masuk tercatat pada: ' + new Date().toLocaleTimeString();
     
     fetch('/api/absen', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({
-            nama: 'Budi Santoso' // ganti nanti sesuai hasil deteksi wajah
-        })
-    });
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json'
+},
+    body: JSON.stringify({ nama: 'Budi Santoso' })
+})
+.then(response => response.json())
+.then(data => {
+    status.textContent = data.message;
+});
 }
             } else {
                 status.textContent = '';

@@ -11,7 +11,8 @@ class IzinController extends Controller
     public function index()
     {
         $izins = Izin::latest()->get();
-        return view('dashboard', compact('izins'));
+        $role = 'hrd'; // atau tergantung siapa yang buka
+return view('pages.dashboard', compact('izins', 'role'));
     }
 
     public function store(Request $request)

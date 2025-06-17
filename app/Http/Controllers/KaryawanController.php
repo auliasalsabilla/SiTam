@@ -8,26 +8,22 @@ use App\Models\Karyawan;
 class KaryawanController extends Controller
 {
     public function store(Request $request)
-    {
-        $request->validate([
-            'nama' => 'required|string|max:255',
-            'jabatan' => 'required',
-            'email' => 'required|email|unique:karyawans',
-            'foto' => 'nullable|image|max:2048',
-        ]);
+{
+    $request->validate([
+        'nama' => 'required|string',
+        'nik' => 'required|string|unique:karyawans,nik',
+        'jabatan' => 'required|string',
+        'email' => 'required|email|unique:karyawans,email',
+    ]);
 
-        $fotoPath = null;
-        if ($request->hasFile('foto')) {
-            $fotoPath = $request->file('foto')->store('foto_karyawan', 'public');
-        }
+    Karyawan::create([
+        'nama' => $request->nama,
+        'jabatan' => $request->jabatan,
+        'email' => $request->email,
+    ]);
 
-        Karyawan::create([
-            'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'email' => $request->email,
-            'foto' => $fotoPath,
-        ]);
+    return redirect()->back()->with('success', 'Karyawan berhasil ditambahkan.');
+}
 
-        return redirect()->route('admin')->with('success', 'Karyawan berhasil ditambahkan.');
-    }
+
 }

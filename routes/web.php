@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\IzinController;
 use App\Http\Controllers\KaryawanController;
-use App\Http\Controllers\AbsensiApiController;
+use App\Http\Controllers\ApiAbsensiController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,4 +19,4 @@ Route::get('/laporan', [AbsensiController::class, 'laporan'])->name('laporan');
 Route::get('/cuti', [AbsensiController::class, 'cuti'])->name('cuti');
 Route::get('/admin', [AbsensiController::class, 'admin'])->name('admin');
 Route::post('/karyawan/store', [KaryawanController::class, 'store'])->name('karyawan.store');
-Route::post('/absen', [AbsensiApiController::class, 'store']);
+Route::post('/absen', [ApiAbsensiController::class, 'store']);
