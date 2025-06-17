@@ -3,7 +3,7 @@
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Pengajuan Izin / Cuti</h1>
 
-<form class="max-w-md bg-white rounded shadow p-6" method="POST" action="#">
+<form class="max-w-md bg-white rounded shadow p-6" method="POST" action="#" enctype="multipart/form-data">
     @csrf
     <div class="mb-4">
         <label for="jenis_izin" class="block mb-1 font-semibold">Jenis Izin/Cuti</label>
@@ -29,9 +29,14 @@
         <textarea id="keterangan" name="keterangan" rows="4" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Opsional"></textarea>
     </div>
 
+    <div class="mb-4">
+        <label for="mc_file" class="block mb-1 font-semibold">Upload Medical Checkup (MC)</label>
+        <input type="file" id="mc_file" name="mc_file" class="w-full border border-gray-300 rounded px-3 py-2" accept=".pdf,.jpg,.jpeg,.png" />
+        <p class="text-sm text-gray-500 mt-1">Format yang didukung: PDF, JPG, JPEG, PNG</p>
+    </div>
+
     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
         Ajukan Izin / Cuti
     </button>
 </form>
 @endsection
-
