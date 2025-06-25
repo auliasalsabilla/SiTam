@@ -23,6 +23,7 @@ class ApiAbsensiController extends Controller
             'nama' => $nama,
             'jam_masuk' => now()->format('H:i:s'),
             'tanggal' => $today,
+            'status' => 'Hadir'
         ]);
         
 

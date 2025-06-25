@@ -14,6 +14,7 @@ return new class extends Migration
     Schema::create('karyawans', function (Blueprint $table) {
         $table->id();
         $table->string('nama');
+        $table->string('nik')->unique(); // Nomor Induk Karyawan, harus unik
         $table->string('jabatan');
         $table->string('email')->unique();
         $table->string('foto')->nullable(); // disimpan di public/storage/foto_karyawan

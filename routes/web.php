@@ -19,4 +19,4 @@ Route::get('/laporan', [AbsensiController::class, 'laporan'])->name('laporan');
 Route::get('/cuti', [AbsensiController::class, 'cuti'])->name('cuti');
 Route::get('/admin', [AbsensiController::class, 'admin'])->name('admin');
 Route::post('/karyawan/store', [KaryawanController::class, 'store'])->name('karyawan.store');
-Route::post('/absen', [ApiAbsensiController::class, 'store']);
+Route::post('/api/absen', [ApiAbsensiController::class, 'store']);
