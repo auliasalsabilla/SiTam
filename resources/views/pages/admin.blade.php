@@ -6,13 +6,6 @@
 <div x-data="{ openForm: false }">
     <!-- Tombol Tambah -->
     <button
-<<<<<<< HEAD
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        onclick="alert('Form tambah karyawan belum dibuat!')"
-    >
-        + Tambah Data Karyawan
-    </button>
-=======
         class="bg-blue-600 text-white px-4 py-2 rounded mb-4 hover:bg-blue-700 transition"
         @click="openForm = !openForm"
     >
@@ -56,7 +49,6 @@
 </form>
 
     </div>
->>>>>>> 422612dd441f886530c363ea23817141e2787b01
 </div>
 
 

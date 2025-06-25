@@ -98,21 +98,6 @@
                         ctx.strokeRect(box.x, box.y, box.width, box.height);
                     });
 
-                if (!absensiTercatat) {
-                    absensiTercatat = true;
-                    status.textContent = 'Absensi masuk tercatat pada: ' + new Date().toLocaleTimeString();
-                    // TODO: Kirim data absensi ke backend via fetch/ajax
-                }
-            } else {
-                status.textContent = '';
-                absensiTercatat = false;
-            }
-        }, 500);
-    });
-
-    window.onload = async () => {
-        await loadModels();
-        startVideo();
                     if (!absensiTercatat) {
                         const bestMatch = faceMatcher.findBestMatch(detections[0].descriptor);
                         const nama = bestMatch.label;

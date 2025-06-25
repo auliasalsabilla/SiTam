@@ -3,18 +3,18 @@
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Dashboard Monitoring Kehadiran</h1>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-    <div class="bg-white rounded shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Karyawan Hadir</h2>
-        <p class="text-3xl font-bold text-green-600">35</p>
+<div class="grid grid-cols-3 gap-4 mb-6">
+    <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-xl font-bold">{{ $jumlahHadir }}</h2>
+        <p>Hadir</p>
     </div>
-    <div class="bg-white rounded shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Karyawan Terlambat</h2>
-        <p class="text-3xl font-bold text-yellow-500">5</p>
+    <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-xl font-bold">{{ $jumlahTerlambat }}</h2>
+        <p>Terlambat</p>
     </div>
-    <div class="bg-white rounded shadow p-6">
-        <h2 class="text-xl font-semibold mb-2">Karyawan Tidak Hadir</h2>
-        <p class="text-3xl font-bold text-red-500">10</p>
+    <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-xl font-bold">{{ $jumlahTidakHadir }}</h2>
+        <p>Tidak Hadir</p>
     </div>
 </div>
 
@@ -29,17 +29,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="border border-gray-300 p-2">Siti Aminah</td>
-                <td class="border border-gray-300 p-2">Cuti Tahunan</td>
-                <td class="border border-gray-300 p-2">2025-06-09</td>
-            </tr>
-            <tr>
-                <td class="border border-gray-300 p-2">Joko Susilo</td>
-                <td class="border border-gray-300 p-2">Izin Sakit</td>
-                <td class="border border-gray-300 p-2">2025-06-09</td>
-            </tr>
-            <!-- Tambah data lain -->
+            @foreach ($izins as $izin)
+                <tr>
+                    <td class="border border-gray-300 p-2">{{ $izin->nama }}</td>
+                    <td class="border border-gray-300 p-2">{{ ucfirst(str_replace('_', ' ', $izin->jenis_izin)) }}</td>
+                    <td class="border border-gray-300 p-2">{{ $izin->tanggal_mulai }} s/d {{ $izin->tanggal_selesai }}</td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
