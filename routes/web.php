@@ -17,9 +17,6 @@ Route::post('/izin/store', [IzinController::class, 'store'])->name('izin.store')
 Route::post('/lihat-pengajuan', [IzinController::class, 'index'])->name('izin.lihat');
 Route::get('/laporan', [AbsensiController::class, 'laporan'])->name('laporan');
 Route::get('/cuti', [AbsensiController::class, 'cuti'])->name('cuti');
-<<<<<<< HEAD
-Route::get('/admin', [AbsensiController::class, 'admin'])->name('admin');
-=======
 Route::get('/admin', [AbsensiController::class, 'admin'])->name('admin');
 Route::post('/karyawan/store', [KaryawanController::class, 'store'])->name('karyawan.store');
 Route::post('/api/absen', [ApiAbsensiController::class, 'store']);
