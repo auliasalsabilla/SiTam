@@ -3,8 +3,20 @@
 @section('content')
 <h1 class="text-3xl font-semibold mb-6">Pengajuan Izin / Cuti</h1>
 
-<form class="max-w-md bg-white rounded shadow p-6" method="POST" action="#" enctype="multipart/form-data">
+<form class="max-w-md bg-white rounded shadow p-6" method="POST" action="{{route('izin.store')}}" enctype="multipart/form-data">
     @csrf
+
+    @if (session('success'))
+        <div class="mb-4 p-4 bg-green-100 text-green-800 rounded">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="mb-4">
+        <label for="nama" class="block mb-1 font-semibold">Nama</label>
+        <input type="nama" name="nama" class="w-full border border-gray-300 rounded px-3 py-2" required />
+    </div>
+
     <div class="mb-4">
         <label for="jenis_izin" class="block mb-1 font-semibold">Jenis Izin/Cuti</label>
         <select id="jenis_izin" name="jenis_izin" class="w-full border border-gray-300 rounded px-3 py-2">
