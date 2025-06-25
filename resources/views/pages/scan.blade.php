@@ -41,7 +41,7 @@
     }
 
     async function loadLabeledImages() {
-        const labels = ['Firli Hanifurahman', 'Steven Marsel']; // Sesuaikan dengan folder yang tersedia
+        const labels = ['Firli Hanifurahman', 'Steven Marsel', 'Fahmi Ahmad Fardani', 'Frima Rizky Lianda']; // Sesuaikan dengan folder yang tersedia
 
         return Promise.all(
             labels.map(async (label) => {
