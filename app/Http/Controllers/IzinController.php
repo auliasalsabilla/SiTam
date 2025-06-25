@@ -12,7 +12,7 @@ class IzinController extends Controller
     {
         $izins = Izin::latest()->get();
         $role = 'hrd'; // atau tergantung siapa yang buka
-return view('pages.dashboard', compact('izins', 'role'));
+        return view('dashboard', compact('izins', 'role'));
     }
 
     public function store(Request $request)
