@@ -25,10 +25,7 @@ public function dashboard()
     $jumlahTerlambat = $absensiHariIni->where('status', 'terlambat')->count();
     $jumlahTidakHadir = Karyawan::count() - $absensiHariIni->count();
 
-    $izins = Izin::whereDate('tanggal_mulai', '<=', $tanggal)
-                 ->whereDate('tanggal_selesai', '>=', $tanggal)
-                 ->get();
-    
+    $izins = Izin::all();
 
     return view('pages.dashboard', compact('role', 'jumlahHadir', 'jumlahTerlambat', 'jumlahTidakHadir', 'izins'));
 }

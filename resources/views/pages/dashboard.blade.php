@@ -34,6 +34,7 @@
                     <td class="border border-gray-300 p-2">{{ $izin->nama }}</td>
                     <td class="border border-gray-300 p-2">{{ ucfirst(str_replace('_', ' ', $izin->jenis_izin)) }}</td>
                     <td class="border border-gray-300 p-2">{{ $izin->tanggal_mulai }} s/d {{ $izin->tanggal_selesai }}</td>
+                    <td class="border border-gray-300 p-2">{{ $izin->tanggal_mulai }} s/d {{ $izin->tanggal_selesai }}</td>
                 </tr>
             @endforeach
         </tbody>

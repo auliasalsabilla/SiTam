@@ -13,6 +13,7 @@ class CreateAbsensisTable extends Migration
             $table->string('nama'); // nanti diganti sesuai wajah yang dikenali
             $table->time('jam_masuk')->nullable();
             $table->date('tanggal')->nullable();
+            $table->string('status')->default('hadir');
             $table->timestamps();
         });
     }
